@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Tourism Assistant AI</title>
+    <link rel="stylesheet" href="chatbot.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+    <div class="chat-container">
+        <div class="chat-messages" id="chat-messages">
+            <div class="bot-message message-bubble">
+                Hello! I'm your AI Tourism Assistant. How can I help you plan your next adventure or answer your travel questions?
+                <div class="image-container" id="initial-images"></div>
+            </div>
+        </div>
+        <div class="loading-indicator" id="loading-indicator">Typing...</div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" class="chat-input" placeholder="Ask about destinations, activities, tips...">
+            <button id="send-button" class="send-button">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Get references to DOM elements
+        const chatInput = document.getElementById('chat-input');
+        const sendButton = document.getElementById('send-button');
+        const chatMessages = document.getElementById('chat-messages');
+        const loadingIndicator = document.getElementById('loading-indicator');
+
+        // Initialize chat history for the Gemini API with system instruction
+        let chatHistory = [
+            {
+                role: "user",
+                parts: [
+                    { text: "You are an AI Tourism Assistant for United Arab Emirates. Your goal is to provide helpful, informative, and engaging responses related to travel, destinations, attractions, culture, booking tips, local customs, and general tourism advice. Be polite, enthusiastic, and focus on assisting with travel plans and questions. Format your responses using markdown where appropriate (bold for highlights, bullet points for lists, newlines for paragraphs). When possible and relevant, try to mention specific places or attractions that can be used to fetch images. If a question is outside the scope of tourism, politely redirect or state that you specialize in travel." }
+                ]
+            },
+            {
+                role: "model",
+                parts: [
+                    { text: "Understood! I am ready to assist with all travel-related inquiries. I will use clear formatting and try to include names of places for image search." }
+                ]
+            }
+        ];
+
+        // --- API Key ---
+        // IMPORTANT: Replace with your actual Gemini API key
+        const GEMINI_API_KEY = "AIzaSyDTkO6p5M9o0dcSS6D8SiudNMUmZoRClv4";
+
+        // --- Markdown to HTML Conversion Function ---
+        function markdownToHtml(markdown) {
+            let html = markdown;
+            html = html.replace(/\n/g, '<br>');
+            // Bold: **text**
+            html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+            // Italic: *text*
+            html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+            // Bullet points: - text or * text
+            html = html.replace(/<br>[\-\*]\s(.*?)(?=<br>|$)/g, '<br><li>$1</li>');
+            // Wrap consecutive <li> in <ul>
+            html = html.replace(/((?:<li>.*?<\/li>)+)/g, '<ul>$1</ul>');
+            return html;
+        }
+
+        // --- Function to display a message in the chat interface ---
+        async function displayMessage(text, sender, userQuery = "") {
+            const messageBubble = document.createElement('div');
+            if (sender === 'user') {
+                messageBubble.classList.add('user-message');
+                messageBubble.textContent = text;
+            } else {
+                messageBubble.classList.add('bot-message');
+                messageBubble.innerHTML = markdownToHtml(text);
+            }
+            chatMessages.appendChild(messageBubble);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // --- Function to send a message to the Gemini API ---
+        async function sendMessage() {
+            const prompt = chatInput.value.trim();
+            if (prompt === '') return;
+
+            // Display user message
+            displayMessage(prompt, 'user');
+            const currentQuery = prompt; // Store the current user query
+            chatInput.value = '';
+
+            // Show loading indicator
+            loadingIndicator.style.display = 'block';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            // Add user message to chat history
+            chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+            try {
+                const payload = {
+                    contents: chatHistory
+                };
+
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates?.[0]?.content?.parts?.length > 0) {
+                    const botResponseText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                    // Display bot message with formatting
+                    await displayMessage(botResponseText, 'bot', currentQuery);
+                    // Add bot response to chat history
+                    chatHistory.push({ role: "model", parts: [{ text: botResponseText }] });
+                } else {
+                    displayMessage("Sorry, I couldn't get a response from the bot. Please try again.", 'bot');
+                    console.error("Gemini API response structure unexpected:", result);
+                }
+
+            } catch (error) {
+                console.error('Error calling Gemini API:', error);
+                displayMessage("An error occurred while connecting to the bot. Please check your network or try again later.", 'bot');
+            } finally {
+                // Hide loading indicator
+                loadingIndicator.style.display = 'none';
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+
+        // Event listeners remain the same
+        sendButton.addEventListener('click', sendMessage);
+        chatInput.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Initial bot message
+        displayMessage("", 'bot', "Sharjah tourism");
+    </script>
+</body>
+</html>
