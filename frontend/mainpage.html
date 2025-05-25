@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EmiraGo Main</title>
+  <link rel="stylesheet" href="mainpage.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">EMIRA<span>GO</span></div>
+
+  <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+
+  <nav id="mainNav">
+    <a href="mainpage.html">Dashboard</a>
+    <a href="Pakage.html">Package Deals</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="forum.html">Book a Tour</a>
+    <a href="contact.html">Contact Us</a>
+    <div class="logout-wrapper">
+      <button class="logout-toggle">Logout ▾</button>
+      <div class="logout-menu">
+        <a href="Index.html">Confirm Logout</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+  <div class="welcome-banner">
+  <video autoplay muted loop playsinline>
+    <source src="Restaurents.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="welcome-message">
+    Welcome, <span id="username">Guest</span>
+  </div>
+</div>
+
+  
+
+  <section class="sponsored-restaurants">
+    <h2>Top Restaurants Curated by EmiraGo</h2>
+    <div class="restaurant-list">
+      <div class="restaurant-card">
+        <img src="images/koshary.jpg" alt="Koshary El Tahrir">
+        <h3>Koshary El Tahrir</h3>
+        <p>Traditional Egyptian street food at its best.</p>
+        <p><strong>Average Price:</strong> AED 20 per meal</p>
+        <p><strong>Location:</strong>Al Barsha, Dubai, UAE.</p>
+      </div>
+      <div class="restaurant-card">
+        <img src="images/b60.jpg" alt="Naguib Mahfouz Restaurant">
+        <h3>B60 Burgers</h3>
+        <p>Savor the freshness, handcrafted burgers straight from the grill.</p>
+        <p><strong>Average Price:</strong> AED 15 per meal</p>
+        <p><strong>Location:</strong>Near Teapost, Central Building Oud Metha-Dubai</p>
+      </div>
+      <div class="restaurant-card">
+        <img src="images/malabar.jpg" alt="Abou El Sid">
+        <h3>Malabar Dine</h3>
+        <p>Authentic Malabar restaurant in Sharjah</p>
+        <p><strong>Average Price:</strong> AED 35 per meal</p>
+        <p><strong>Location:</strong>Opposite Lulu Hypermarket, Muwailih Commercial, Sharjah</p>
+      </div>
+    </div>
+  </section>
+
+<section class="blog-section">
+  <div class="blog-header">
+    <h2><span class="highlight">Where Words Fall Short</span> Our Stories Speak.</h2>
+    <p>For those who yearn for new adventures close to home, explore our UAE travel stories for inspiration, hidden gems, and unforgettable experiences.</p>
+    <button class="view-all-btn">View All Blogs →</button>
+  </div>
+
+  <div class="blog-cards">
+    <div class="blog-card">
+      <a href="eid-getaways.html">
+        <img src="Images/eid-dubai.jpg" alt="Eid Getaways UAE">
+      </a>
+      <div class="blog-date">15<br><span>May '25</span></div>
+      <h3>Last-Minute Eid Getaways Across the UAE!</h3>
+    </div>
+    <div class="blog-card">
+      <a href="emirati-food.html">
+        <img src="Images/emirati-food.jpg" alt="Traditional Emirati Food">
+      </a>
+      <div class="blog-date">10<br><span>May '25</span></div>
+      <h3>A Foodie’s Guide to Traditional Emirati Cuisine</h3>
+    </div>
+    <div class="blog-card">
+      <a href="weekend-adventures.html">
+        <img src="Images/weekend-dubai.jpg" alt="Weekend Adventures UAE">
+      </a>
+      <div class="blog-date">26<br><span>Apr '25</span></div>
+      <h3>Explore UAE’s Best Spots Over the Weekend</h3>
+    </div>
+    <div class="blog-card">
+      <a href="unique-uae-experiences.html">
+      <img src="Images/lifetime-uae.jpg" alt="Unique UAE Experiences">
+      </a>
+      <div class="blog-date">17<br><span>Apr '25</span></div>
+      <h3>10 Unique UAE Experiences to Try at Least Once</h3>
+    </div>
+  </div>
+
+  <p class="blog-description">
+    Discover the best holiday experiences within the UAE in 2025 — from thrilling desert safaris to serene beach escapes and cultural adventures across all Emirates.
+  </p>
+</section>
+
+
+  <script>
+  document.querySelectorAll('.feature-card a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      console.log(`Navigating to: ${e.target.innerText}`);
+    });
+  });
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.1 });
+    // Toggle logout dropdown
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector(".navbar");
+  const nav = navbar.querySelector("nav");
+
+  const toggleBtn = navbar.querySelector(".mobile-nav-toggle");
+  toggleBtn.onclick = () => nav.classList.toggle("active");
+
+  const logoutButton = document.querySelector(".logout-toggle");
+  const logoutMenu = document.querySelector(".logout-menu");
+
+  if (logoutButton) {
+    logoutButton.addEventListener("click", () => {
+      logoutMenu.classList.toggle("show");
+    });
+  }
+});
+  </script>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h3>EmiraGo</h3>
+      <p>Your gateway to exploring the Emirates like never before.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Destinations</a></li>
+          <li><a href="#">Packages</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: emirago.og@gmail.com</li>
+          <li>Phone: +971 54 399 4924</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul class="social">
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 EmiraGo.</p>
+  </div>
+</footer>
+
+<script type="module" src="auth-state.js"></script>
+</body>
+</html>

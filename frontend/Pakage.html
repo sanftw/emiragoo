@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EmiraGo Hero</title>
+  <link rel="stylesheet" href="Offer.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">EMIRA<span>GO</span></div>
+
+  <button class="mobile-nav-toggle">☰</button>
+
+  <nav id="mainNav">
+    <a href="mainpage.html">Dashboard</a>
+    <a href="Pakage.html">Package Deals</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="forum.html">Book a Tour</a>
+    <a href="contact.html">Contact Us</a>
+    <div class="logout-wrapper">
+      <button class="logout-toggle">Logout ▾</button>
+      <div class="logout-menu">
+        <a href="Index.html">Confirm Logout</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+<section class="hero-carousel">
+  <video autoplay muted loop>
+    <source src="Dubai.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-text">
+    <h1><span class="eid">Eid</span> Last Minute <strong>Deals</strong></h1>
+  </div>
+</section>
+
+
+<section class="popular-packages">
+  <h2>Popular Tourism Spots in UAE</h2>
+  <div class="packages-wrapper">
+
+    <div class="package-card">
+      <img src="Images/burj-khalifa.jpg" alt="Burj Khalifa">
+      <div class="seats-left">8 Seats Left</div>
+      <h4><a href="pricing.html">Burj Khalifa</a></h4>
+      <p>Visit the world’s tallest tower</p>
+      <p>01 June 2025</p>
+      <p class="price">From <span class="blue">AED 299</span> | 📅 1D 🕒 Tour</p>
+    </div>
+
+    <div class="package-card">
+      <img src="Images/desert-safari.jpg" alt="Desert Safari">
+      <div class="seats-left">12 Seats Left</div>
+      <h4><a href="pricing.html">Dubai Desert Safari</a></h4>
+      <p>Dune bashing & cultural show</p>
+      <p>02 June 2025</p>
+      <p class="price">From <span class="blue">AED 199</span> | 📅 Evening 🕒 6H</p>
+    </div>
+
+    <div class="package-card">
+      <img src="Images/sheikh-zayed-mosque.jpg" alt="Sheikh Zayed Grand Mosque">
+      <div class="seats-left">10 Seats Left</div>
+      <h4><a href="pricing.html">Sheikh Zayed Mosque</a></h4>
+      <p>Architectural marvel in Abu Dhabi</p>
+      <p>03 June 2025</p>
+      <p class="price">From <span class="blue">AED 149</span> | 📅 1D 🕒 Tour</p>
+    </div>
+
+    <div class="package-card">
+      <img src="Images/hatta-mountains.jpg" alt="Hatta Mountains">
+      <div class="seats-left">6 Seats Left</div>
+      <h4><a href="pricing.html">Hatta Mountain Tour</a></h4>
+      <p>Kayaking and hiking adventures</p>
+      <p>04 June 2025</p>
+      <p class="price">From <span class="blue">AED 249</span> | 📅 1D 🕒 Tour</p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<script>
+  document.querySelectorAll('.feature-card a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      console.log(`Navigating to: ${e.target.innerText}`);
+    });
+  });
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.1 });
+    // Toggle logout dropdown
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector(".navbar");
+  const nav = navbar.querySelector("nav");
+
+  const toggleBtn = navbar.querySelector(".mobile-nav-toggle");
+  toggleBtn.onclick = () => nav.classList.toggle("active");
+
+  const logoutButton = document.querySelector(".logout-toggle");
+  const logoutMenu = document.querySelector(".logout-menu");
+
+  if (logoutButton) {
+    logoutButton.addEventListener("click", () => {
+      logoutMenu.classList.toggle("show");
+    });
+  }
+});
+  </script>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h3>EmiraGo</h3>
+      <p>Your gateway to exploring the Emirates like never before.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Destinations</a></li>
+          <li><a href="#">Packages</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: emirago.og@gmail.com</li>
+          <li>Phone: +971 54 399 4924</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul class="social">
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 EmiraGo.</p>
+  </div>
+</footer>
+</body>
+</html>

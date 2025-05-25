@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EmiraGo Main</title>
+  <link rel="stylesheet" href="mainpage.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">EMIRA<span>GO</span></div>
+
+  <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+
+  <nav id="mainNav">
+    <a href="mainpage.html">Dashboard</a>
+    <a href="Pakage.html">Package Deals</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="forum.html">Book a Tour</a>
+    <a href="contact.html">Contact Us</a>
+    <div class="logout-wrapper">
+      <button class="logout-toggle">Logout ▾</button>
+      <div class="logout-menu">
+        <a href="Index.html">Confirm Logout</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<section class="blog-header">
+    <h1 class="blog-title">10 Unique UAE Experiences to Try at Least Once</h1>
+    <p class="blog-author">By EmiraGo</p>
+    <p class="blog-paragraph">
+        The UAE is more than just glitzy malls and towering skyscrapers—it's a vibrant blend of tradition, innovation, and adventure. Whether you're a tourist or a long-time resident, these 10 unique experiences promise to show you a different side of the Emirates.
+    </p>
+    <ol class="uae-experiences-list">
+        <li>
+            <strong>Desert Safari at Sunset</strong><br>
+            Ride across golden dunes in a 4x4, try sandboarding, and enjoy a traditional Bedouin-style dinner under the stars.
+        </li>
+        <li>
+            <strong>Visit the Al Fahidi Historical Neighborhood</strong><br>
+            Explore narrow lanes, wind towers, and restored homes that showcase Dubai's humble beginnings before oil.
+        </li>
+        <li>
+            <strong>Kayak Through Mangroves in Abu Dhabi</strong><br>
+            Paddle your way through serene mangrove forests in Jubail Island, a surprising escape into nature.
+        </li>
+        <li>
+            <strong>Ride the World’s Fastest Rollercoaster</strong><br>
+            Head to Ferrari World in Yas Island and experience the Formula Rossa reaching speeds of up to 240 km/h.
+        </li>
+        <li>
+            <strong>Stay Overnight in the Mountains</strong><br>
+            Camp in Ras Al Khaimah’s Jebel Jais mountains for cool temperatures and incredible sunrise views.
+        </li>
+        <li>
+            <strong>Take a Traditional Abra Ride</strong><br>
+            For just 1 AED, cross the Dubai Creek on a wooden boat and soak in the contrast between old souks and modern towers.
+        </li>
+        <li>
+            <strong>Watch Camel Racing at Al Marmoom</strong><br>
+            Witness the unique sport of camel racing, complete with robot jockeys and a festive atmosphere.
+        </li>
+        <li>
+            <strong>Explore Ghost Towns in the Desert</strong><br>
+            Visit abandoned villages like Al Madam in Sharjah—a haunting reminder of life in the desert before urbanization.
+        </li>
+        <li>
+            <strong>Taste a Local Home-Cooked Meal</strong><br>
+            Platforms like Frying Pan Adventures or local cultural centers offer authentic Emirati dining experiences.
+        </li>
+        <li>
+            <strong>Attend a Cultural Workshop</strong><br>
+            Learn about henna, Arabic calligraphy, or falconry at the Sheikh Mohammed Centre for Cultural Understanding.
+        </li>
+    </ol>
+</section>
+<script>
+  document.querySelectorAll('.feature-card a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      console.log(`Navigating to: ${e.target.innerText}`);
+    });
+  });
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.1 });
+    // Toggle logout dropdown
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector(".navbar");
+  const nav = navbar.querySelector("nav");
+
+  const toggleBtn = navbar.querySelector(".mobile-nav-toggle");
+  toggleBtn.onclick = () => nav.classList.toggle("active");
+
+  const logoutButton = document.querySelector(".logout-toggle");
+  const logoutMenu = document.querySelector(".logout-menu");
+
+  if (logoutButton) {
+    logoutButton.addEventListener("click", () => {
+      logoutMenu.classList.toggle("show");
+    });
+  }
+});
+  </script>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h3>EmiraGo</h3>
+      <p>Your gateway to exploring the Emirates like never before.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Destinations</a></li>
+          <li><a href="#">Packages</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: emirago.og@gmail.com</li>
+          <li>Phone: +971 54 399 4924</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul class="social">
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 EmiraGo.</p>
+  </div>
+</footer>
+</body>
+</html>

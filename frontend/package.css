@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background: #ffffff;
+  color: #1e1e1e;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #1e1e1e;
+}
+.logo span {
+  color: #0047FF;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.navbar nav a:hover {
+  color: #0047FF;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
+  border-radius: 6px;
+  min-width: 160px;
+  z-index: 1000;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #333;
+  text-decoration: none;
+}
+.dropdown-content a:hover {
+  background: #f8f8f8;
+}
+
+.logout-wrapper {
+  position: relative;
+}
+.logout-toggle {
+  background: #0047FF;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.logout-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  z-index: 999;
+  min-width: 140px;
+}
+.logout-menu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: #333;
+  text-decoration: none;
+}
+.logout-menu a:hover {
+  background: #f0f0f0;
+}
+.logout-menu.show {
+  display: block;
+}
+
+.mobile-nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #0047FF;
+}
+
+@media (max-width: 1247px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar nav {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .navbar nav.active {
+    display: flex;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    right: 1.5rem;
+  }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EmiraGo Forum</title>
+  <link rel="stylesheet" href="mainpage.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">EMIRA<span>GO</span></div>
+    <button class="mobile-nav-toggle">☰</button>
+    <nav id="mainNav">
+    <a href="mainpage.html">Dashboard</a>
+    <a href="Pakage.html">Package Deals</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="forum.html">Book a Tour</a>
+    <a href="contact.html">Contact Us</a>
+    <div class="logout-wrapper">
+      <button class="logout-toggle">Logout ▾</button>
+      <div class="logout-menu">
+        <a href="Index.html">Confirm Logout</a>
+      </div>
+    </div>
+  </nav>
+  </header>
+  <!-- Tour Guide Booking Intro -->
+  <section class="tour-intro">
+    <div class="tour-intro-content">
+      <h2>Discover the UAE with a Local Touch</h2>
+      <p>
+        Exploring the United Arab Emirates is an adventure like no other. From the futuristic skyline of Dubai to the cultural heart of Sharjah and the stunning natural beauty of Ras Al Khaimah, there’s so much to see—but experiencing it with a knowledgeable local guide takes it to the next level. Whether you're a first-time visitor or a resident looking to explore more deeply, a personal tour guide can help uncover hidden gems, share fascinating history, and provide cultural insights you won’t find in a brochure.
+      </p>
+      <p>
+        Our tour guide booking service connects you with trusted, experienced local guides who tailor each tour to your interests—whether you're into heritage sites, modern attractions, food experiences, or nature escapes. No more guessing which places are worth your time or missing out on local stories behind famous landmarks.
+      </p>
+      <p>
+        With flexible schedules and guides fluent in multiple languages, we ensure a smooth, enriching experience for individuals, families, or groups. Fill out the form below to let us know your preferences, and we’ll match you with the perfect guide for your UAE journey.
+      </p>
+      <div class="tour-intro-highlight">
+        <span>Let’s make your trip unforgettable—with local knowledge and personalized service.</span>
+      </div>
+    </div>
+  </section>
+  <!-- Form Section -->
+  <div class="form-page">
+    <div class="form-wrapper">
+      <div class="form-container">
+        <h1>Book a Tour Guide</h1>
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="8c032f43-e25f-43ae-95fc-a57e56d2ebfb">
+          <input type="hidden" name="subject" value="New Tour Guide Booking">
+          <input type="hidden" name="from_name" value="EmiraGo Booking Form">
+
+          <label for="name">Full Name</label>
+          <input type="text" name="name" required>
+
+          <label for="email">Phone Number</label>
+          <input type="number" name="Phone Number" required>
+
+          <label for="location">Preferred Location</label>
+          <input type="text" name="location" required>
+
+          <label for="date">Tour Date</label>
+          <input type="date" name="date" required>
+
+          <label for="language">Language Preference</label>
+          <input type="text" name="language">
+
+          <label for="message">Additional Notes</label>
+          <textarea name="message"></textarea>
+
+          <button type="submit">Book Now</button>
+        </form>
+        <p id="confirmationMessage" style="display:none;">Thanks! We received your booking.</p>
+      </div>
+    </div>
+  </div>
+
+<script>
+  document.querySelectorAll('.feature-card a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      console.log(`Navigating to: ${e.target.innerText}`);
+    });
+  });
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.1 });
+    // Toggle logout dropdown
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector(".navbar");
+  const nav = navbar.querySelector("nav");
+
+  const toggleBtn = navbar.querySelector(".mobile-nav-toggle");
+  toggleBtn.onclick = () => nav.classList.toggle("active");
+
+  const logoutButton = document.querySelector(".logout-toggle");
+  const logoutMenu = document.querySelector(".logout-menu");
+
+  if (logoutButton) {
+    logoutButton.addEventListener("click", () => {
+      logoutMenu.classList.toggle("show");
+    });
+  }
+});
+  </script>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h3>EmiraGo</h3>
+      <p>Your gateway to exploring the Emirates like never before.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Destinations</a></li>
+          <li><a href="#">Packages</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: emirago.og@gmail.com</li>
+          <li>Phone: +971 54 399 4924</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul class="social">
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 EmiraGo.</p>
+  </div>
+</footer>
+  <script src="Index.js"></script>
+</body>
+</html>

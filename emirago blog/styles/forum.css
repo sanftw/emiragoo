@@ -1,0 +1,52 @@
+.forum-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.forum-container h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.post-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.post-box textarea {
+  resize: vertical;
+  padding: 0.75rem;
+  font-size: 1rem;
+  min-height: 100px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.post-box button {
+  align-self: flex-end;
+  padding: 0.5rem 1rem;
+  background-color: #008080;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.posts {
+  margin-top: 2rem;
+}
+
+.post {
+  background: #f9f9f9;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.no-posts {
+  text-align: center;
+  color: #888;
+}

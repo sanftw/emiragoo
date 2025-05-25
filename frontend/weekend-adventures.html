@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EmiraGo Main</title>
+  <link rel="stylesheet" href="mainpage.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">EMIRA<span>GO</span></div>
+
+  <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+
+  <nav id="mainNav">
+    <a href="mainpage.html">Dashboard</a>
+    <a href="Pakage.html">Package Deals</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="forum.html">Book a Tour</a>
+    <a href="contact.html">Contact Us</a>
+    <div class="logout-wrapper">
+      <button class="logout-toggle">Logout ▾</button>
+      <div class="logout-menu">
+        <a href="Index.html">Confirm Logout</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<section class="blog-header">
+    <h1 class="blog-title">Weekend Adventures: Exploring the City</h1>
+    <p class="blog-author">By EmiraGo</p>
+    <p class="blog-paragraph">
+        🏝️ Explore UAE’s Best Spots Over the Weekend<br>
+        Looking to escape the routine and make the most of your weekend? The UAE is packed with stunning spots that blend culture, adventure, and luxury. Whether you're a resident or a visitor, here are some must-visit locations to consider for your next weekend getaway:
+    </p>
+    <br>
+
+    <p class="blog-paragraph">
+        🌇 1. Jebel Jais – Ras Al Khaimah<br>
+        The UAE’s highest peak, Jebel Jais, offers cool weather, incredible mountain views, and adrenaline-pumping experiences like the world’s longest zipline. Perfect for campers, hikers, and thrill-seekers.
+    </p>
+    <img src="images/2-1.jpg" alt="Jebel Jais" style="width:100%;max-width:600px;border-radius:8px;margin-bottom:24px;">
+    <br>
+
+    <p class="blog-paragraph">
+        🏖️ 2. Al Qudra Lakes – Dubai<br>
+        Escape the city and relax by the serene Al Qudra Lakes. Ideal for picnics, bird watching, and sunset photography. Don’t forget to bring a bike for a ride on the nearby cycling track.
+    </p>
+    <img src="images/pexels-ashal-abbas-2623660-5855865.jpg" alt="Al Qudra Lakes" style="width:100%;max-width:600px;border-radius:8px;margin-bottom:24px;">
+    <br>
+
+    <p class="blog-paragraph">
+        🕌 3. Sheikh Zayed Grand Mosque – Abu Dhabi<br>
+        For a mix of culture and awe-inspiring architecture, visit the Sheikh Zayed Grand Mosque. The white marble structure is breathtaking, especially during golden hour.
+    </p>
+    <img src="images/pexels-sessiznotalar-32231701.jpg" alt="Sheikh Zayed Grand Mosque" style="width:100%;max-width:600px;border-radius:8px;margin-bottom:24px;">
+    <br>
+
+    <p class="blog-paragraph">
+        🏝️ 4. Saadiyat Island – Abu Dhabi<br>
+        This peaceful island is home to luxury resorts, art galleries, and pristine beaches. Saadiyat Beach is perfect for a quiet, upscale weekend escape.
+    </p>
+    <img src="images/pexels-sandhu-jassi-2149181128-30466595.jpg" alt="Saadiyat Island" style="width:100%;max-width:600px;border-radius:8px;margin-bottom:24px;">
+    <br>
+
+    <p class="blog-paragraph">
+        🐪 5. Hatta – Dubai<br>
+        Nestled in the Hajar Mountains, Hatta offers kayaking, hiking trails, and heritage villages. Stay in a glamping resort or enjoy a barbecue by the dam.
+    </p>
+    <img src="images/pexels-lina-12238400.jpg" alt="Hatta" style="width:100%;max-width:600px;border-radius:8px;margin-bottom:24px;">
+    <br>
+
+    <p class="blog-paragraph">
+        🛍️ 6. Global Village – Dubai<br>
+        If you're looking for food, fun, and shopping from around the world in one place, Global Village is a weekend wonderland—open during the cooler months.
+    </p>
+    <img src="images/Global-Village-1-1536x1152.jpg" alt="Global Village" style="width:100%;max-width:600px;border-radius:8px;margin-bottom:24px;">
+    <br>
+
+    <p class="blog-paragraph">
+        💡 Tips for Your Trip<br>
+        Book early during peak season (October–April)<br>
+        Stay hydrated and wear sunscreen<br>
+        Use EmiraGo to find local guides, restaurant discounts, and cultural events!
+    </p>
+</section>
+<script>
+  document.querySelectorAll('.feature-card a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      console.log(`Navigating to: ${e.target.innerText}`);
+    });
+  });
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.1 });
+    // Toggle logout dropdown
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector(".navbar");
+  const nav = navbar.querySelector("nav");
+
+  const toggleBtn = navbar.querySelector(".mobile-nav-toggle");
+  toggleBtn.onclick = () => nav.classList.toggle("active");
+
+  const logoutButton = document.querySelector(".logout-toggle");
+  const logoutMenu = document.querySelector(".logout-menu");
+
+  if (logoutButton) {
+    logoutButton.addEventListener("click", () => {
+      logoutMenu.classList.toggle("show");
+    });
+  }
+});
+  </script>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h3>EmiraGo</h3>
+      <p>Your gateway to exploring the Emirates like never before.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="mainpage.html">Home</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="Pakage.html">Packages</a></li>
+          <li><a href="forum.html">Book a Tour</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: emirago.og@gmail.com</li>
+          <li>Phone: +971 54 399 4924</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul class="social">
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 EmiraGo.</p>
+  </div>
+</footer>
+</body>
+</html>

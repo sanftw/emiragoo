@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EmiraGo Hero</title>
+  <link rel="stylesheet" href="dist/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">EMIRA<span>GO</span></div>
+    <nav id="mainNav">
+    <a href="logreg.html">Dashboard</a>
+    <a href="logreg.html">Package Deals</a>
+    <a href="logreg.html">Paying Page</a>
+    <a href="logreg.html">Book a Tour</a>
+    <a href="logreg.html">Contact Us</a>
+    <div class="auth-buttons">
+      <a href="logreg.html" class="btn link">Sign Up</a>
+      <a href="logreg.html" class="btn primary">Sign In</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>LET'S GO!<br/>THE <span class="highlight">ADVENTURE</span> IS<br/>WAITING FOR YOU</h1>
+      <p>Discover the UAE like never before! Explore breathtaking destinations, vibrant culture, and unforgettable experiences across the Emirates. Start your adventure with EmiraGo – your gateway to the wonders of the UAE.</p>
+      <button class="btn primary">Book Now</button>
+    </div>
+    <div class="hero-image">
+      <img src="burj-modified.png" alt="Burj Khalifa" />
+      <div class="tag flight">Curated Suggestions</div>
+      <div class="tag hotel">🛎️Hidden Spots</div>
+      <div class="tag events">📍 Local Events</div>
+      <div class="tag tour">🧭 Tour Guide</div>
+    </div>
+  </section>
+ 
+
+    <button class="arrow-btn right" onclick="scrollOffers(1)">&#8250;</button>
+  </div>
+</section>
+
+<section class="destination-section">
+  <h2>Explore by Themes</h2>
+  <div class="tabs">
+    <button class="tab active" data-tab="hidden">Hidden Secrets</button>
+    <button class="tab" data-tab="weekend">Weekend Getaways</button>
+    <button class="tab" data-tab="mountains">Mountains Calling</button>
+    <button class="tab" data-tab="restaurants">Local Restaurants</button>
+    <button class="tab" data-tab="pilgrimage">Pilgrimage Spots</button>
+    <button class="tab" data-tab="party">Party Places</button>
+  </div>
+
+  <div class="tab-content active" id="hidden">
+    <div class="dest-grid">
+      <div class="dest-card"><img src="Images/Hatta.jpg" alt="Hatta"><p>Hatta Pools</p></div>
+      <div class="dest-card"><img src="Images/Al Qudra Lakes.jpg" alt="Al Qudra Lakes"><p>Al Qudra Lakes</p></div>
+      <div class="dest-card"><img src="Images/Fossil Rock.jpg" alt="Fossil Rock"><p>Fossil Rock</p></div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="weekend">
+    <div class="dest-grid">
+      <div class="dest-card"><img src="Images/Ras Al Khaimah.jpg" alt="Ras Al Khaimah"><p>Ras Al Khaimah</p></div>
+      <div class="dest-card"><img src="Images/Al Ain Oasis.jpg" alt="Al Ain Oasis"><p>Al Ain Oasis</p></div>
+      <div class="dest-card"><img src="Images/Al Fahidi Historic District.jpg" alt="Al Fahidi"><p>Al Fahidi District</p></div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="mountains">
+    <div class="dest-grid">
+      <div class="dest-card"><img src="Images/Jebel Jais.jpg" alt="Jebel Jais"><p>Jebel Jais</p></div>
+      <div class="dest-card"><img src="Images/Hajar Mountain.jpg" alt="Hajar Mountain"><p>Hajar Mountains</p></div>
+      <div class="dest-card"><img src="Images/Wadi Shawka.jpg" alt="Wadi Shawka"><p>Wadi Shawka</p></div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="restaurants">
+    <div class="dest-grid">
+      <div class="dest-card"><img src="Images/Al Fanar Restaurant.jpg" alt="Al Fanar"><p>Al Fanar</p></div>
+      <div class="dest-card"><img src="Images/Al Malla Restaurant.jpg" alt="Al Malla"><p>Al Malla</p></div>
+      <div class="dest-card"><img src="Images/Arabian Tea House.jpg" alt="Arabian Tea House"><p>Arabian Tea House</p></div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="pilgrimage">
+    <div class="dest-grid">
+      <div class="dest-card"><img src="Images/Sheikh Zayed Grand Mosque.jpg" alt="Sheikh Zayed Mosque"><p>Sheikh Zayed Mosque</p></div>
+      <div class="dest-card"><img src="Images/Al Bidyah Mosque.jpg" alt="Al Bidyah Mosque"><p>Al Bidyah Mosque</p></div>
+      <div class="dest-card"><img src="Images/Guru Nanak Darbar.jpg" alt="Guru Nanak Darbar"><p>Guru Nanak Darbar</p></div>
+      <div class="dest-card"><img src="Images/St. Mary’s Catholic Church.jpg" alt="St. Mary's Church"><p>St. Mary’s Church</p></div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="party">
+    <div class="dest-grid">
+      <div class="dest-card"><img src="Images/White Dubai Club.jpg" alt="White Dubai"><p>White Dubai</p></div>
+      <div class="dest-card"><img src="Images/Soho Garden.jpg" alt="Soho Garden"><p>Soho Garden</p></div>
+      <div class="dest-card"><img src="Images/Zero Gravity.jpg" alt="Zero Gravity"><p>Zero Gravity</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-news">
+  <h2>Trending in the UAE</h2>
+  <div class="gallery-grid">
+    <div class="gallery-card">
+      <img src="Location-images/Abu Dhabi.jpg" alt="Abu Dhabi">
+      <div class="overlay">
+        <h4>Abu Dhabi's skyline continues to grow</h4>
+        <p>BY EMIRA GO TEAM</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Ajman.jpg" alt="Ajman">
+      <div class="overlay">
+        <h4>Beach serenity and local heritage in Ajman</h4>
+        <p>BY TRAVEL JOURNAL</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Al Ain.jpg" alt="Al Ain">
+      <div class="overlay">
+        <h4>Gardens and forts of Al Ain unveiled</h4>
+        <p>BY CULTURE TODAY</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Al Rams.jpg" alt="Al Rams">
+      <div class="overlay">
+        <h4>Al Rams pearl diving village reopens</h4>
+        <p>BY HERITAGE WEEKLY</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Al Wathba.jpg" alt="Al Wathba">
+      <div class="overlay">
+        <h4>Desert wildlife thrives in Al Wathba</h4>
+        <p>BY NATURE UAE</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Delma Island.jpg" alt="Delma Island">
+      <div class="overlay">
+        <h4>Island escape: Delma’s rich history</h4>
+        <p>BY COASTLINE MAG</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Dibba.jpg" alt="Dibba">
+      <div class="overlay">
+        <h4>Dibba fishing festival brings crowd</h4>
+        <p>BY GULF LIFE</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Dubai.jpg" alt="Dubai">
+      <div class="overlay">
+        <h4>16 must-visit museums in Dubai</h4>
+        <p>BY NICOLA CHILTON</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Fujairah.jpg" alt="Fujairah">
+      <div class="overlay">
+        <h4>Fujairah’s hidden fortresses revealed</h4>
+        <p>BY HISTORY UAE</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Hatta.jpg" alt="Hatta">
+      <div class="overlay">
+        <h4>Adventure activities grow in Hatta</h4>
+        <p>BY WEEKEND ESCAPES</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Jebel Jais.jpg" alt="Jebel Jais">
+      <div class="overlay">
+        <h4>Zipline thrill returns to Jebel Jais</h4>
+        <p>BY ADVENTURE GAZETTE</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Kalba.jpg" alt="Kalba">
+      <div class="overlay">
+        <h4>New mangrove conservation park in Kalba</h4>
+        <p>BY UAE GREEN</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Khor Fakkan.jpg" alt="Khor Fakkan">
+      <div class="overlay">
+        <h4>Khor Fakkan's amphitheatre opens to public</h4>
+        <p>BY CITY NOW</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Liwa Oasis.jpg" alt="Liwa Oasis">
+      <div class="overlay">
+        <h4>Liwa Date Festival draws visitors</h4>
+        <p>BY FARMING EMIRATES</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Madinat Zayed.jpg" alt="Madinat Zayed">
+      <div class="overlay">
+        <h4>New souq opens in Madinat Zayed</h4>
+        <p>BY URBAN ARABIA</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Masafi.jpg" alt="Masafi">
+      <div class="overlay">
+        <h4>Masafi spring attracts eco-tourists</h4>
+        <p>BY WATER WORLD</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Mirfa.jpg" alt="Mirfa">
+      <div class="overlay">
+        <h4>Relax in the calm beaches of Mirfa</h4>
+        <p>BY COAST ESCAPE</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Ras Al Khaimah.jpg" alt="Ras Al Khaimah">
+      <div class="overlay">
+        <h4>Hot air balloon rides in Ras Al Khaimah</h4>
+        <p>BY FLY UAE</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Sharjah.jpg" alt="Sharjah">
+      <div class="overlay">
+        <h4>Sharjah Art Biennial opens this week</h4>
+        <p>BY ART ZONE</p>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <img src="Location-images/Umm Al Quwain.jpg" alt="Umm Al Quwain">
+      <div class="overlay">
+        <h4>New marine park launches in Umm Al Quwain</h4>
+        <p>BY BLUE WORLD</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="location-map">
+  <h2>Explore Nearby Attractions</h2>
+  <p>Select your current city to discover top nearby places in the UAE.</p>
+  
+  <div class="city-selector">
+    <button class="city-btn active" data-city="dubai" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115771.1078020299!2d55.171279937282015!3d25.092535841220396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43467b88bdb3%3A0x929d393ed0bc7f51!2sDubai!5e0!3m2!1sen!2sae!4v1716400000000!5m2!1sen!2sae">Dubai</button>
+    
+    <button class="city-btn" data-city="sharjah" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462837.174682146!2d55.239481!3d25.346255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f5bf8aa4d5b1%3A0xe8792c90267cd2c2!2sSharjah!5e0!3m2!1sen!2sae!4v1716400000000!5m2!1sen!2sae">Sharjah</button>
+    
+    <button class="city-btn" data-city="abu-dhabi" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230177.28500252152!2d54.2447723!3d24.453884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e6673c8ec8331%3A0xf927b67c1b52f86b!2sAbu%20Dhabi!5e0!3m2!1sen!2sae!4v1716400000000!5m2!1sen!2sae">Abu Dhabi</button>
+    
+    <button class="city-btn" data-city="ajman" data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115340.1772102337!2d55.4451843!3d25.4052166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f53833f2cd87%3A0xd3c83d3347e8db47!2sAjman!5e0!3m2!1sen!2sae!4v1716400000000!5m2!1sen!2sae">Ajman</button>
+  </div>
+
+  <div class="map-grid">
+    <iframe id="google-map-frame"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115771.1078020299!2d55.171279937282015!3d25.092535841220396!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43467b88bdb3%3A0x929d393ed0bc7f51!2sDubai!5e0!3m2!1sen!2sae!4v1716400000000!5m2!1sen!2sae"
+            width="100%"
+            height="450"
+            style="border:0; border-radius: 12px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h3>EmiraGo</h3>
+      <p>Your gateway to exploring the Emirates like never before.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="mainpage.html">Home</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="Pakage.html">Packages</a></li>
+          <li><a href="forum.html">Book a Tour</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: emirago.og@gmail.com</li>
+          <li>Phone: +971 54 399 4924</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul class="social">
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 EmiraGo.</p>
+  </div>
+</footer>
+  <script src="Index.js"></script>
+</body>
+</html>

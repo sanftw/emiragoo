@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EmiraGo Main</title>
+  <link rel="stylesheet" href="mainpage.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+<header class="navbar">
+  <div class="logo">EMIRA<span>GO</span></div>
+
+  <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+
+  <nav id="mainNav">
+    <a href="mainpage.html">Dashboard</a>
+    <a href="Pakage.html">Package Deals</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="forum.html">Book a Tour</a>
+    <a href="contact.html">Contact Us</a>
+    <div class="logout-wrapper">
+      <button class="logout-toggle">Logout ▾</button>
+      <div class="logout-menu">
+        <a href="Index.html">Confirm Logout</a>
+      </div>
+    </div>
+  </nav>
+</header>
+<section class="blog-header">
+    <h1 class="blog-title">A Foodie’s Guide to Traditional Emirati Cuisine</h1>
+    <p class="blog-paragraph">
+        The UAE is known for its futuristic skyline and luxury experiences, but nestled within its modern exterior is a rich culinary heritage waiting to be explored. Traditional Emirati cuisine tells the story of the region’s culture, values, and way of life—built on hospitality, simplicity, and bold flavors.
+    </p>
+    <img src="images/cover-2.jpg" alt="Traditional Emirati Cuisine" style="width:100%;max-width:600px;border-radius:8px;margin-bottom:24px;">
+    <br>
+    <h2 class="blog-subtitle">Start with the Staples</h2>
+    <p class="blog-paragraph">
+        A great introduction to Emirati food begins with Harees, a comforting dish made with wheat and slow-cooked meat. Another staple is Machboos, a spiced rice dish infused with dried lemon (loomi), saffron, and an aromatic blend of spices—usually paired with chicken or lamb. Both dishes reflect the Emiratis' love for slow-cooked, hearty meals.
+    </p>
+    <img src="images/Arabic-Chciken-Harees.jpg" alt="Harees and Machboos" style="width:100%;max-width:600px;border-radius:8px;margin-bottom:24px;">
+    <br>
+    <h2 class="blog-subtitle">Breakfast the Local Way</h2>
+    <p class="blog-paragraph">
+        Begin your morning with Balaleet—a delightful contrast of sweet saffron vermicelli noodles topped with a savory egg omelet. Often served with karak tea, it's a must-try for those who enjoy unique flavor pairings.
+    </p>
+    <img src="images/balaleet6-scaled.jpg" alt="Balaleet" style="width:100%;max-width:600px;border-radius:8px;margin-bottom:24px;">
+    <br>
+    <h2 class="blog-subtitle">Don’t Miss the Street Snacks</h2>
+    <p class="blog-paragraph">
+        Traditional snacks like Luqaimat, deep-fried dough balls drizzled with date syrup, are a favorite during Ramadan and festive occasions. These bite-sized treats are crispy on the outside and soft inside, perfect for a quick indulgence.
+    </p>
+    <img src="images/photo.jpg" alt="Luqaimat" style="width:100%;max-width:600px;border-radius:8px;margin-bottom:24px;">
+    <br>
+    <h2 class="blog-subtitle">Flavors from the Sea</h2>
+    <p class="blog-paragraph">
+        Given the UAE’s strong coastal heritage, seafood plays a central role. Dishes such as Jesheed (baby shark with rice and spices) reflect the nation's connection to the sea and its historic pearl-diving roots.
+    </p>
+    <img src="images/2-102.jpg" alt="Jesheed" style="width:100%;max-width:600px;border-radius:8px;margin-bottom:24px;">
+    <br>
+    <h2 class="blog-subtitle">Savor the Culture</h2>
+    <p class="blog-paragraph">
+        Beyond just taste, Emirati cuisine emphasizes sharing, gathering, and generosity. Most meals are served in large portions, meant to be enjoyed together, reflecting the deep-rooted value of community.
+    </p>
+    <br>
+    <p class="blog-paragraph">
+        Exploring Emirati cuisine is more than just a food journey—it's a cultural experience. Whether you're visiting a traditional restaurant or being welcomed into a local home, these dishes offer a delicious glimpse into the heart of the UAE.
+    </p>
+</section>
+<script>
+  document.querySelectorAll('.feature-card a').forEach(link => {
+    link.addEventListener('click', (e) => {
+      console.log(`Navigating to: ${e.target.innerText}`);
+    });
+  });
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+      }
+    });
+  }, { threshold: 0.1 });
+    // Toggle logout dropdown
+document.addEventListener("DOMContentLoaded", () => {
+  const navbar = document.querySelector(".navbar");
+  const nav = navbar.querySelector("nav");
+
+  const toggleBtn = navbar.querySelector(".mobile-nav-toggle");
+  toggleBtn.onclick = () => nav.classList.toggle("active");
+
+  const logoutButton = document.querySelector(".logout-toggle");
+  const logoutMenu = document.querySelector(".logout-menu");
+
+  if (logoutButton) {
+    logoutButton.addEventListener("click", () => {
+      logoutMenu.classList.toggle("show");
+    });
+  }
+});
+  </script>
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-logo">
+      <h3>EmiraGo</h3>
+      <p>Your gateway to exploring the Emirates like never before.</p>
+    </div>
+    <div class="footer-links">
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="mainpage.html">Home</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="Pakage.html">Packages</a></li>
+          <li><a href="forum.html">Book a Tour</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>Email: emirago.og@gmail.com</li>
+          <li>Phone: +971 54 399 4924</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <ul class="social">
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 EmiraGo.</p>
+  </div>
+</footer>
+</body>
+</html>

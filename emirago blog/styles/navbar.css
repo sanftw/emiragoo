@@ -1,0 +1,53 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  background: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #333;
+}
+
+.navbar .logo span {
+  color: #008080;
+}
+
+.navbar nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #008080;
+}
+
+.auth-buttons .btn {
+  margin-left: 1rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-buttons .btn.link {
+  background: transparent;
+  color: #008080;
+}
+
+.auth-buttons .btn.primary {
+  background: #008080;
+  color: #fff;
+}
+
+.auth-buttons .btn.primary:hover {
+  background: #006666;
+}
